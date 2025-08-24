@@ -1,6 +1,6 @@
 # Code Documentation - US Naturalization Quiz
 
-![Screenshot of the Quiz Game](/img/USNatTestQuiz.png)
+![Screenshot of the Quiz Game](img/USNatTestQuiz.png)
 
 ## About the Game
 
