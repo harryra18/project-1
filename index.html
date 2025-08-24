@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>US Naturalization Test Quiz</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <div class="header">
+            <h1>🇺🇸 US Naturalization Test Quiz</h1>
+            <p>Practice with official USCIS questions</p>
+        </div>
+
+        <!-- Game Instructions -->
+        <div class="instructions">
+            <h2>How to Play</h2>
+            <ul>
+                <li>Answer 10 questions from the official naturalization test</li>
+                <li>You need 6 correct answers to pass (just like the real test!)</li>
+                <li>Click on your answer choice to select it</li>
+                <li>Click "Submit Answer" to check if you're correct</li>
+                <li>Click "Next Question" to continue</li>
+            </ul>
+        </div>
+
+        <!-- Game Stats -->
+        <div class="game-stats">
+            <div class="stat-card">
+                <p class="stat-number" id="current-question">0</p>
+                <p class="stat-label">Question</p>
+            </div>
+            <div class="stat-card">
+                <p class="stat-number" id="correct-count">0</p>
+                <p class="stat-label">Correct</p>
+            </div>
+            <div class="stat-card">
+                <p class="stat-number" id="score">0%</p>
+                <p class="stat-label">Score</p>
+            </div>
+        </div>
+
+        <!-- Question Area -->
+        <div class="question-container" id="question-container">
+            <p class="question-number" id="question-number"></p>
+            <p class="question" id="question-text"></p>
+            <div class="options" id="options-container"></div>
+            <p class="feedback" id="feedback"></p>
+            <div class="controls">
+                <button class="btn" id="submit-btn">Submit Answer</button>
+                <button class="btn" id="next-btn">Next Question</button>
+            </div>
+        </div>
+
+        <!-- Results -->
+        <div class="results" id="results">
+            <h2 id="results-title"></h2>
+            <p>Your final score: <span class="final-score" id="final-score"></span></p>
+            <p>Correct answers: <span id="final-correct"></span></p>
+            <p class="pass-status" id="pass-status"></p>
+            <button class="btn" id="restart-btn">Restart Quiz</button>
+        </div>
+    </div>
+
+    <script src="/data/data.js"></script>
+    <script src="/js/app.js"></script>
+</body>
+</html>
