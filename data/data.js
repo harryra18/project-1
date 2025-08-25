@@ -128,7 +128,7 @@ const quizQuestionsRaw = [
 // Simple shuffle function
 function shuffleArray(array) {
     let newArray = [...array];  // Make a copy so i don't change the original
-    
+
     // Basic shuffle algorithm
     for (let i = 0; i < newArray.length; i++) {
         let randomIndex = Math.floor(Math.random() * newArray.length);
@@ -137,27 +137,27 @@ function shuffleArray(array) {
         newArray[i] = newArray[randomIndex];
         newArray[randomIndex] = temp;
     }
-    
+
     return newArray;
 }
 
 // Convert raw questions to game format
 function prepareQuestions() {
     let gameQuestions = [];
-    
+
     // Process each raw question
     for (let i = 0; i < quizQuestionsRaw.length; i++) {
         let q = quizQuestionsRaw[i];
-        
+
         // Combine correct and incorrect answers
         let allAnswers = [q.correctAnswer, ...q.incorrectAnswers];
-        
+
         // Shuffle the answers so correct isn't always first
         let shuffledAnswers = shuffleArray(allAnswers);
-        
+
         // Find where the correct answer ended up after shuffling
         let correctIndex = shuffledAnswers.indexOf(q.correctAnswer);
-        
+
         // Create the game question object
         gameQuestions.push({
             question: q.question,
@@ -165,7 +165,7 @@ function prepareQuestions() {
             correct: correctIndex
         });
     }
-    
+
     return gameQuestions;
 }
 
