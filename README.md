@@ -29,7 +29,7 @@ Players answer 10 random questions from the official USCIS question and need 6 c
 
 
 
-## Resources
+## Attribution/Resources
 
 - [Questions: USCIS Official Question](https://www.uscis.gov/citizenship/testquestions)
 - [Check Mark and Cross Mark Icon: HTML-CSS-JSS](https://html-css-js.com/html/character-codes/icons/)
