@@ -1,9 +1,4 @@
-// US Naturalization Test Questions Database - All 100 Official USCIS Questions
-// Each question has its correct answer in correctAnswer and three incorrect answers.
-// The shuffleOptions function will shuffle them and set the correct index dynamically.
-
 const quizQuestionsRaw = [
-    // AMERICAN GOVERNMENT - Principles of American Democracy
     { question: "What is the supreme law of the land?", correctAnswer: "The Constitution", incorrectAnswers: ["The Declaration of Independence", "The Bill of Rights", "The Articles of Confederation"] },
     { question: "What does the Constitution do?", correctAnswer: "All of the above", incorrectAnswers: ["Sets up the government", "Defines the government", "Protects basic rights of Americans"] },
     { question: "The idea of self-government is in the first three words of the Constitution. What are these words?", correctAnswer: "We the People", incorrectAnswers: ["Life, Liberty, and", "In God We", "All men are"] },
@@ -16,8 +11,6 @@ const quizQuestionsRaw = [
     { question: "What is freedom of religion?", correctAnswer: "You can practice any religion, or not practice a religion", incorrectAnswers: ["You must practice Christianity", "You cannot practice religion", "You must choose one religion"] },
     { question: "What is the economic system in the United States?", correctAnswer: "Capitalist economy", incorrectAnswers: ["Socialist economy", "Communist economy", "Feudal economy"] },
     { question: "What is the 'rule of law'?", correctAnswer: "Everyone must follow the law", incorrectAnswers: ["Only citizens follow the law", "Laws can be ignored", "Leaders are above the law"] },
-
-    // AMERICAN GOVERNMENT - System of Government
     { question: "Name one branch or part of the government.", correctAnswer: "All of the above", incorrectAnswers: ["Congress", "Executive", "Judicial"] },
     { question: "What stops one branch of government from becoming too powerful?", correctAnswer: "Checks and balances", incorrectAnswers: ["The Constitution", "The President", "Congress"] },
     { question: "Who is in charge of the executive branch?", correctAnswer: "The President", incorrectAnswers: ["Congress", "The Supreme Court", "The Vice President"] },
@@ -44,8 +37,6 @@ const quizQuestionsRaw = [
     { question: "Under our Constitution, some powers belong to the federal government. What is one power of the federal government?", correctAnswer: "To declare war", incorrectAnswers: ["To issue driver's licenses", "To run schools", "To perform marriages"] },
     { question: "Under our Constitution, some powers belong to the states. What is one power of the states?", correctAnswer: "Provide schooling and education", incorrectAnswers: ["Print money", "Declare war", "Make treaties"] },
     { question: "What are the two major political parties in the United States?", correctAnswer: "Democratic and Republican", incorrectAnswers: ["Liberal and Conservative", "Federal and State", "Progressive and Traditional"] },
-
-    // AMERICAN GOVERNMENT - Rights and Responsibilities
     { question: "There are four amendments to the Constitution about who can vote. Describe one of them.", correctAnswer: "Citizens eighteen and older can vote", incorrectAnswers: ["Only men can vote", "Only property owners can vote", "Only educated people can vote"] },
     { question: "What is one responsibility that is only for United States citizens?", correctAnswer: "Serve on a jury", incorrectAnswers: ["Pay taxes", "Obey laws", "Go to school"] },
     { question: "Name one right only for United States citizens.", correctAnswer: "Vote in a federal election", incorrectAnswers: ["Freedom of speech", "Freedom of religion", "Right to bear arms"] },
@@ -56,8 +47,6 @@ const quizQuestionsRaw = [
     { question: "What are two ways that Americans can participate in their democracy?", correctAnswer: "Vote and join a political party", incorrectAnswers: ["Pay taxes and obey laws", "Go to school and work", "Watch TV and read newspapers"] },
     { question: "When is the last day you can send in federal income tax forms?", correctAnswer: "April 15", incorrectAnswers: ["December 31", "January 31", "March 15"] },
     { question: "When must all men register for the Selective Service?", correctAnswer: "At age 18", incorrectAnswers: ["At age 16", "At age 21", "When they graduate high school"] },
-
-    // AMERICAN HISTORY - Colonial Period and Independence
     { question: "What is one reason colonists came to America?", correctAnswer: "Freedom", incorrectAnswers: ["Gold", "Adventure", "Fame"] },
     { question: "Who lived in America before the Europeans arrived?", correctAnswer: "American Indians", incorrectAnswers: ["Spanish explorers", "French traders", "Vikings"] },
     { question: "What group of people was taken to America and sold as slaves?", correctAnswer: "Africans", incorrectAnswers: ["Europeans", "Asians", "Native Americans"] },
@@ -71,8 +60,6 @@ const quizQuestionsRaw = [
     { question: "What is one thing Benjamin Franklin is famous for?", correctAnswer: "U.S. diplomat", incorrectAnswers: ["First President", "Wrote the Constitution alone", "Led the army"] },
     { question: "Who is the 'Father of Our Country'?", correctAnswer: "George Washington", incorrectAnswers: ["Thomas Jefferson", "Benjamin Franklin", "John Adams"] },
     { question: "Who was the first President?", correctAnswer: "George Washington", incorrectAnswers: ["John Adams", "Thomas Jefferson", "Benjamin Franklin"] },
-
-    // AMERICAN HISTORY - 1800s
     { question: "What territory did the United States buy from France in 1803?", correctAnswer: "The Louisiana Territory", incorrectAnswers: ["The Florida Territory", "The Texas Territory", "The California Territory"] },
     { question: "Name one war fought by the United States in the 1800s.", correctAnswer: "The Civil War", incorrectAnswers: ["World War I", "World War II", "Korean War"] },
     { question: "Name the U.S. war between the North and the South.", correctAnswer: "The Civil War", incorrectAnswers: ["The Revolutionary War", "The War of 1812", "The Spanish-American War"] },
@@ -80,8 +67,6 @@ const quizQuestionsRaw = [
     { question: "What was one important thing that Abraham Lincoln did?", correctAnswer: "Freed the slaves", incorrectAnswers: ["Founded the Republican Party", "Built the railroads", "Discovered gold"] },
     { question: "What did the Emancipation Proclamation do?", correctAnswer: "Freed the slaves", incorrectAnswers: ["Ended the war", "Created new states", "Established voting rights"] },
     { question: "What did Susan B. Anthony do?", correctAnswer: "Fought for women's rights", incorrectAnswers: ["Led the Underground Railroad", "Founded the Red Cross", "Invented the telephone"] },
-
-    // AMERICAN HISTORY - Recent History
     { question: "Name one war fought by the United States in the 1900s.", correctAnswer: "World War II", incorrectAnswers: ["The Civil War", "The Revolutionary War", "The War of 1812"] },
     { question: "Who was President during World War I?", correctAnswer: "Woodrow Wilson", incorrectAnswers: ["Theodore Roosevelt", "William Taft", "Warren Harding"] },
     { question: "Who was President during the Great Depression and World War II?", correctAnswer: "Franklin Roosevelt", incorrectAnswers: ["Theodore Roosevelt", "Harry Truman", "Herbert Hoover"] },
@@ -92,8 +77,6 @@ const quizQuestionsRaw = [
     { question: "What did Martin Luther King, Jr. do?", correctAnswer: "Fought for civil rights", incorrectAnswers: ["Led labor unions", "Fought in wars", "Founded universities"] },
     { question: "What major event happened on September 11, 2001, in the United States?", correctAnswer: "Terrorists attacked the United States", incorrectAnswers: ["A major earthquake occurred", "A hurricane hit the East Coast", "The stock market crashed"] },
     { question: "Name one American Indian tribe in the United States.", correctAnswer: "Cherokee", incorrectAnswers: ["Aztec", "Inca", "Maya"] },
-
-    // INTEGRATED CIVICS - Geography
     { question: "Name one of the two longest rivers in the United States.", correctAnswer: "Mississippi River", incorrectAnswers: ["Colorado River", "Rio Grande", "Hudson River"] },
     { question: "What ocean is on the West Coast of the United States?", correctAnswer: "Pacific Ocean", incorrectAnswers: ["Atlantic Ocean", "Indian Ocean", "Arctic Ocean"] },
     { question: "What ocean is on the East Coast of the United States?", correctAnswer: "Atlantic Ocean", incorrectAnswers: ["Pacific Ocean", "Indian Ocean", "Arctic Ocean"] },
@@ -102,17 +85,11 @@ const quizQuestionsRaw = [
     { question: "Name one state that borders Mexico.", correctAnswer: "Texas", incorrectAnswers: ["Louisiana", "Oklahoma", "Colorado"] },
     { question: "What is the capital of the United States?", correctAnswer: "Washington, D.C.", incorrectAnswers: ["New York City", "Philadelphia", "Boston"] },
     { question: "Where is the Statue of Liberty?", correctAnswer: "New York Harbor", incorrectAnswers: ["Washington, D.C.", "Boston Harbor", "San Francisco Bay"] },
-
-    // INTEGRATED CIVICS - Symbols
     { question: "Why does the flag have 13 stripes?", correctAnswer: "Because there were 13 original colonies", incorrectAnswers: ["Because there were 13 signers", "Because there were 13 years of war", "Because there were 13 founding fathers"] },
     { question: "Why does the flag have 50 stars?", correctAnswer: "Because there are 50 states", incorrectAnswers: ["Because there are 50 senators", "Because there were 50 signers", "Because there are 50 capitals"] },
     { question: "What is the name of the national anthem?", correctAnswer: "The Star-Spangled Banner", incorrectAnswers: ["America the Beautiful", "God Bless America", "My Country 'Tis of Thee"] },
-
-    // INTEGRATED CIVICS - Holidays
     { question: "When do we celebrate Independence Day?", correctAnswer: "July 4", incorrectAnswers: ["July 14", "August 4", "June 4"] },
     { question: "Name two national U.S. holidays.", correctAnswer: "Christmas and New Year's Day", incorrectAnswers: ["Easter and Halloween", "Valentine's Day and St. Patrick's Day", "Mother's Day and Father's Day"] },
-
-    // Additional questions to reach 100 (replacing state-specific questions)
     { question: "What is the introduction to the Constitution called?", correctAnswer: "The Preamble", incorrectAnswers: ["The Introduction", "The Beginning", "The Opening"] },
     { question: "What are the first 10 amendments called?", correctAnswer: "The Bill of Rights", incorrectAnswers: ["The Constitution", "The Declaration", "The Articles"] },
     { question: "What is the capital city of your country?", correctAnswer: "Washington, D.C.", incorrectAnswers: ["New York", "Boston", "Philadelphia"] },
@@ -125,14 +102,13 @@ const quizQuestionsRaw = [
     { question: "What document declared American independence?", correctAnswer: "Declaration of Independence", incorrectAnswers: ["Constitution", "Bill of Rights", "Articles of Confederation"] }
 ];
 
-// Simple shuffle function
-function shuffleArray(array) {
-    let newArray = [...array];  // Make a copy so i don't change the original
 
-    // Basic shuffle algorithm
+function shuffleArray(array) {
+    let newArray = [...array];
+
     for (let i = 0; i < newArray.length; i++) {
         let randomIndex = Math.floor(Math.random() * newArray.length);
-        // Swap elements
+
         let temp = newArray[i];
         newArray[i] = newArray[randomIndex];
         newArray[randomIndex] = temp;
@@ -141,24 +117,18 @@ function shuffleArray(array) {
     return newArray;
 }
 
-// Convert raw questions to game format
 function prepareQuestions() {
     let gameQuestions = [];
 
-    // Process each raw question
     for (let i = 0; i < quizQuestionsRaw.length; i++) {
         let q = quizQuestionsRaw[i];
 
-        // Combine correct and incorrect answers
         let allAnswers = [q.correctAnswer, ...q.incorrectAnswers];
 
-        // Shuffle the answers so correct isn't always first
         let shuffledAnswers = shuffleArray(allAnswers);
 
-        // Find where the correct answer ended up after shuffling
         let correctIndex = shuffledAnswers.indexOf(q.correctAnswer);
 
-        // Create the game question object
         gameQuestions.push({
             question: q.question,
             options: shuffledAnswers,
@@ -169,5 +139,4 @@ function prepareQuestions() {
     return gameQuestions;
 }
 
-// Create the shuffled questions when the page loads
 const quizQuestions = prepareQuestions();

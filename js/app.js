@@ -1,11 +1,9 @@
-// Game state variables
 let currentQuestionIndex = 0;
 let selectedQuestions = [];
 let userAnswers = [];
 let correctCount = 0;
 let selectedAnswer = null;
 
-// DOM elements
 const questionContainer = document.getElementById('question-container');
 const resultsContainer = document.getElementById('results');
 const questionNumber = document.getElementById('question-number');
@@ -16,18 +14,15 @@ const submitBtn = document.getElementById('submit-btn');
 const nextBtn = document.getElementById('next-btn');
 const restartBtn = document.getElementById('restart-btn');
 
-// Stats elements
 const currentQuestionStat = document.getElementById('current-question');
 const correctCountStat = document.getElementById('correct-count');
 const scoreStat = document.getElementById('score');
 
-// Results elements
 const resultsTitle = document.getElementById('results-title');
 const finalScore = document.getElementById('final-score');
 const passStatus = document.getElementById('pass-status');
 const finalCorrect = document.getElementById('final-correct');
 
-// Simple shuffle function
 function shuffleArray(array) {
     const newArray = [...array];
     for (let i = newArray.length - 1; i > 0; i--) {
@@ -37,7 +32,6 @@ function shuffleArray(array) {
     return newArray;
 }
 
-// Initialize the quiz
 function initQuiz() {
     currentQuestionIndex = 0;
     correctCount = 0;
@@ -52,7 +46,6 @@ function initQuiz() {
     updateStats();
 }
 
-// Load current question
 function loadQuestion() {
     const question = selectedQuestions[currentQuestionIndex];
 
@@ -77,7 +70,6 @@ function loadQuestion() {
     feedback.style.display = 'none';
 }
 
-// Select an answer
 function selectAnswer(index, button) {
     document.querySelectorAll('.option').forEach(opt => {
         opt.classList.remove('selected');
@@ -88,7 +80,6 @@ function selectAnswer(index, button) {
     submitBtn.disabled = false;
 }
 
-// Submit the answer
 function submitAnswer() {
     if (selectedAnswer === null) return;
 
@@ -121,7 +112,6 @@ function submitAnswer() {
     updateStats();
 }
 
-// Go to next question
 function nextQuestion() {
     currentQuestionIndex++;
     if (currentQuestionIndex < 10) {
@@ -131,7 +121,6 @@ function nextQuestion() {
     }
 }
 
-// Update stats
 function updateStats() {
     currentQuestionStat.textContent = currentQuestionIndex + 1;
     correctCountStat.textContent = correctCount;
@@ -144,7 +133,6 @@ function updateStats() {
     scoreStat.textContent = percentage + "%";
 }
 
-// Show results
 function showResults() {
     questionContainer.style.display = 'none';
     resultsContainer.style.display = 'block';
@@ -161,20 +149,17 @@ function showResults() {
     resultsContainer.scrollIntoView({ behavior: 'smooth' });
 }
 
-// Restart quiz
 function restartQuiz() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
     initQuiz();
 }
 
-// Setup event listeners
 function setupEventListeners() {
     submitBtn.addEventListener('click', submitAnswer);
     nextBtn.addEventListener('click', nextQuestion);
     restartBtn.addEventListener('click', restartQuiz);
 }
 
-// Start quiz
 function startQuiz() {
     if (!quizQuestions || quizQuestions.length === 0) {
         alert('Quiz data not found!');
@@ -184,7 +169,6 @@ function startQuiz() {
     initQuiz();
 }
 
-// Load when DOM is ready
 if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', startQuiz);
 } else {
