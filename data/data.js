@@ -171,7 +171,3 @@ function prepareQuestions() {
 
 // Create the shuffled questions when the page loads
 const quizQuestions = prepareQuestions();
-
-// Log for debugging
-console.log(`Quiz loaded with ${quizQuestions.length} questions`);
-console.log('First question:', quizQuestions[0]);
